@@ -5,6 +5,8 @@ const utils = require('./utils');
 
 const app = express();
 
+const port = process.env.PORT || 8080;
+
 app.get('/', (req, res) => {
   res.send({status: 'OK'});
 });
@@ -18,6 +20,6 @@ app.get('/:dateStr', (req, res) => {
   res.send({unix, natural});
 });
 
-app.listen(8080, () => {
-  console.log('Example app listening on port 8080!');
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`);
 });
