@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
   res.send({status: 'OK'});
 });
 
-app.get('/:dateStr', function (req, res) {
+app.get('/:dateStr', (req, res) => {
   let natural = req.params.dateStr;
   let unix = null;
   const timestamp = utils.toTimestamp(natural);
@@ -18,6 +18,6 @@ app.get('/:dateStr', function (req, res) {
   res.send({unix, natural});
 });
 
-app.listen(8080, function () {
+app.listen(8080, () => {
   console.log('Example app listening on port 8080!');
 });
